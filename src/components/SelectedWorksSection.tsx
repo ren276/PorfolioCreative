@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const CARDS = [
@@ -42,7 +42,7 @@ export const SelectedWorksSection = () => {
             }
         );
 
-        cardsRef.current.forEach((card, index) => {
+        cardsRef.current.forEach((card) => {
             if (!card) return;
             gsap.fromTo(
                 card,
@@ -80,7 +80,7 @@ export const SelectedWorksSection = () => {
                     {CARDS.map((card, index) => (
                         <div
                             key={card.id}
-                            ref={(el) => (cardsRef.current[index] = el)}
+                            ref={(el) => { cardsRef.current[index] = el; }}
                             className={`group flex flex-col ${card.offset ? 'md:mt-32' : ''}`}
                         >
                             <div className="relative aspect-[4/5] bg-gray-100 mb-8 overflow-hidden">

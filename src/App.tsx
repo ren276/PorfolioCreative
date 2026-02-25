@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import { CustomCursor } from './components/CustomCursor';
 import { StickyNav } from './components/StickyNav';
 import { HeroSection } from './components/HeroSection';
-import { IntroStrip } from './components/IntroStrip';
 import { ObservationSection } from './components/ObservationSection';
 import { SelectedWorksSection } from './components/SelectedWorksSection';
 import { QuoteSection } from './components/QuoteSection';
