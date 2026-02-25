@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0a0a0a;
+  --color-secondary: #ffffff;
+  --color-accent-amber: #f5a623;
+  --color-accent-red: #e63535;
+
+  --font-display: "Anton", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --background-image-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-family: var(--font-body);
+    /* -webkit-font-smoothing: antialiased; */
+  }
+
+  /* Optional simple noise overlay if needed, will keep it for that extra editorial touch */
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: var(--background-image-noise);
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+/* Base custom cursor classes */
+body.hide-cursor {
+  cursor: none;
+}
+body.hide-cursor * {
+  cursor: none !important;
+}
+
+/* Smooth scrolling via CSS to complement GSAP */
+html {
+  scroll-behavior: auto; /* GSAP ScrollSmoother later if needed */
+}
